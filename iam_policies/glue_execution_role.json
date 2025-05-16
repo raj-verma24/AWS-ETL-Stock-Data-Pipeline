@@ -1,0 +1,28 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:ListBucket"
+            ],
+            "Resource": [
+                "arn:aws:s3:::my-stock-data-bucket/raw/*",
+                "arn:aws:s3:::my-stock-data-bucket/etl_output/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "glue:GetTable",
+                "glue:GetTables",
+                "glue:GetDatabase",
+                "glue:CreateJob",
+                "glue:ExecuteJob"
+            ],
+            "Resource": "*"
+        }
+    ]
+}
